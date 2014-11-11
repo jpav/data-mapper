@@ -18,14 +18,14 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
 import org.jboss.mapper.forge.Model;
 
-class Browser extends Composite {
+class DataBrowser extends Composite {
     
     static final Field[] NO_FIELDS = new Field[ 0 ];
     
     TreeViewer viewer = new TreeViewer( this );
     TreeViewerColumn column = new TreeViewerColumn( viewer, SWT.NONE );
     
-    Browser( final Composite parent ) {
+    DataBrowser( final Composite parent ) {
         super( parent, SWT.NONE );
         setLayout( GridLayoutFactory.fillDefaults().create() );
         final Tree tree = viewer.getTree();

@@ -36,12 +36,12 @@ import org.jboss.mapper.forge.ConfigBuilder;
 import org.jboss.mapper.forge.Model;
 import org.jboss.mapper.forge.ModelBuilder;
 
-class Mapper extends Composite {
+class DataMapper extends Composite {
     
     URLClassLoader loader;
     ConfigBuilder configBuilder;
     
-    Mapper( final Composite parent,
+    DataMapper( final Composite parent,
             final File configFile ) {
         super( parent, SWT.NONE );
         
@@ -132,7 +132,7 @@ class Mapper extends Composite {
                           sourceModel.getName() + " to target " + targetModel.getName() );
             text.setBackground( getBackground() );
             
-            final Browser sourceBrowser = new Browser( this );
+            final DataBrowser sourceBrowser = new DataBrowser( this );
             sourceBrowser.setLayoutData( GridDataFactory.fillDefaults().grab( true, true ).create() );
             sourceBrowser.setInput( "Source", sourceModel );
             final Transfer[] xfers = new Transfer[] { LocalSelectionTransfer.getTransfer() };
@@ -149,7 +149,7 @@ class Mapper extends Composite {
             final Label label = new Label( this, SWT.NONE );
             label.setText( "=>" );
             
-            final Browser targetBrowser = new Browser( this );
+            final DataBrowser targetBrowser = new DataBrowser( this );
             targetBrowser.setLayoutData( GridDataFactory.fillDefaults().grab( true, true ).create() );
             targetBrowser.setInput( "Target", targetModel );
             targetBrowser.viewer.addDropSupport( DND.DROP_MOVE, xfers, new ViewerDropAdapter( targetBrowser.viewer ) {

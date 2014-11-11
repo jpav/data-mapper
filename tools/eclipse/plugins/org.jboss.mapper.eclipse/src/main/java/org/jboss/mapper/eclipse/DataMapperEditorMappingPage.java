@@ -30,7 +30,7 @@ public class DataMapperEditorMappingPage extends EditorPart {
     @SuppressWarnings( "unused" )
     @Override
     public void createPartControl( final Composite parent ) {
-        new Mapper( parent, new File( ( ( FileEditorInput ) getEditorInput() ).getURI() ) );
+        new DataMapper( parent, new File( ( ( FileEditorInput ) getEditorInput() ).getURI() ) );
     }
     
     /**
